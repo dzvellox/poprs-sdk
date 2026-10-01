@@ -1,0 +1,17 @@
+{
+  "name": "poprs-sdk",
+  "version": "0.1.0",
+  "description": "Typed PoPRS client, merchant, router and L1 bindings",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "files": ["dist", "README.md", "LICENSE"],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {".": {"types": "./dist/index.d.ts", "import": "./dist/index.js", "require": "./dist/index.cjs"}},
+  "scripts": {"build": "tsup", "typecheck": "tsc --noEmit", "test": "vitest run", "check": "npm run typecheck && npm test && npm run build", "generate:abi": "node scripts/generate-abi.mjs"},
+  "engines": {"node": ">=20"},
+  "dependencies": {"@noble/curves": "^1.9.7", "qrcode": "^1.5.4", "viem": "^2.57.2"},
+  "devDependencies": {"@types/node": "^22.15.0", "@types/qrcode": "^1.5.5", "solc": "^0.8.30", "tsup": "^8.5.0", "typescript": "^5.9.3", "vitest": "^3.2.4"}
+}
